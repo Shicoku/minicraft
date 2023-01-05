@@ -48,7 +48,7 @@ header {
     top: 8px;
 }
 #input:checked ~ .open span {
-    background: black;
+    background: rgba(0, 0, 0, 0);
 }
 #input:checked ~ .open span::before {
     bottom: 0;
