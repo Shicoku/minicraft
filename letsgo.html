@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--icons-->
+    <link rel="icon" type="image/png" href="./img/minicraft.png">
+    <link rel="shortcut icon" type="image/png" href="./img/minicraft.png">
+	<link rel="apple-touch-icon" href="./img/minicraft.png">
+    <!--styles-->
+    <link rel="stylesheet" href="./styles/style.css">
+    <!--カンニングは良くないよ！-->
+    <title>MiniCraft</title>
+</head>
+<body>
+    <header>
+        <h1>MiniCraft</h1>
+            <input id="input" class="hidden" type="checkbox">
+            <label for="input" class="open"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <nav class="nav_content">
+                <ul>
+                    <li class="nav_item"><a href="./member.html">メンバー紹介</a></li>
+                </ul>
+            </nav>
+    </header>
+    <p>パスワードを入力してください<span style="margin-left: 10px;"><input type="text" id="pass"></span><button onclick="pass()">認証</button></p>
+    <div id="result"></div>
+    <footer>
+        <h3>&copy;2023~ Make by Syu</h3>
+    </footer>
+    <script>
+        function pass() {
+            let get_pass = document.getElementById('pass').value;
+            let result = document.getElementById("result");
+            let pass = '小ネタ';
+
+            if(get_pass == pass) {
+                let randnum = Math.floor( Math.random() * 4 );
+                let a = ''
+                switch (randnum) {
+                    case 0:
+                        a = '吉';
+                        break;
+
+                    case 1:
+                        a = '凶';
+                        break;
+
+                    case 2:
+                        a = '大凶';
+                        break;
+                    
+                    case 3:
+                        a = '大吉';
+                        break;
+                }
+                result.innerHTML = `<p>今日の運勢は${a}</p>`
+                console.log('Lc')
+            } else if(get_pass === 'EgLc') {
+                console.log('おめでとう！謎をすべて説いた君は尊敬に値する！もう一度いおう、おめでとう！')
+            } else {
+                alert('パスワードが違います。');
+                console.log('Eg')
+            }
+        }
+    </script>
+</body>
+</html>
